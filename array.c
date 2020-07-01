@@ -39,3 +39,23 @@ int SumOfInts(ArrayOfInts array) {
     sum += *(array.elements + i);
   }
 }
+
+_Bool CheckRepeated(int* elements, unsigned n) {
+  REPEAT(i, n - 1) {
+    if (*(elements + i) == (*(elements + n))) return 1;
+  }
+  return 0;
+}
+
+ArrayOfInts MakeSet(ArrayOfInts array) {
+  if (!array.size) return (ArrayOfInts) {0, (void*)0 };
+  unsigned size = 0;
+  int* set = malloc(array.size * sizeof(int));
+  REPEAT(i, array.size) {
+    if (!CheckRepeated(array.elements, i)) {
+      *(set + i) = *(array.elements + i);
+      ++size;
+    }
+  }
+  return (ArrayOfInts) {size, set};
+}

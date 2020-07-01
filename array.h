@@ -19,4 +19,6 @@ ArrayOfInts ReverseInts(ArrayOfInts);
 double SumOfDoubles(ArrayOfDoubles);
 int SumOfInts(ArrayOfInts);
 
+ArrayOfInts MakeSet(ArrayOfInts);
+
 #endif // #ifndef _HAS_INCLUDE_ARRAY_H
