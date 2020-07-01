@@ -6,6 +6,7 @@
 #include "macros.h"
 
 ArrayOfDoubles TransformDoubles(ArrayOfDoubles, double (*)(double));
+ArrayOfDoubles TransformDoublesBinary(ArrayOfDoubles, ArrayOfDoubles, double (*)(double, double));
 ArrayOfInts TransformInts(ArrayOfInts, int (*)(int));
 
 #endif

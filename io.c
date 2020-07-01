@@ -40,9 +40,9 @@ void PrintArrayOfDoubles(ArrayOfDoubles array) {
   printf("[");
   REPEAT(i, array.size) {
     if (i != array.size - 1) {
-      printf("%lf, ", (array.elements + i));
+      printf("%f, ", *(array.elements + i));
     }
-    else printf("%lf]", (array.elements + i));
+    else printf("%f]", *(array.elements + i));
   }
 }
 
@@ -51,8 +51,8 @@ void PrintArrayOfInts(ArrayOfInts array) {
   printf("[");
   REPEAT(i, array.size) {
     if (i != array.size - 1) {
-      printf("%d, ", (array.elements + i));
+      printf("%d, ", *(array.elements + i));
     }
-    else printf("%d]", (array.elements + i));
+    else printf("%d]\n", *(array.elements + i));
   }
 }

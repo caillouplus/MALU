@@ -23,3 +23,19 @@ ArrayOfInts TransformInts(ArrayOfInts array, int (*function)(int)) {
   }
   return (ArrayOfInts) { array.size, buffer };
 }
+
+ArrayOfDoubles TransformDoublesBinary(ArrayOfDoubles array_a, ArrayOfDoubles array_b, double (*function)(double, double)) {
+  if ((!array_a.size) || (!array_b.size)) return (ArrayOfDoubles) { 0, (void*)0 };
+  if (array_a.size != array_b.size) {
+    wprintf(L"As arrays têm de ter tamanhos iguais");
+    return (ArrayOfDoubles) { 0, (void*)0 };
+  }
+  double* buffer = malloc(array_a.size * sizeof(double));
+  if (!buffer) {
+    wprintf(L"Não conseguimos alocar memória.\n");
+  }
+  REPEAT(i, array_a.size) {
+    *(buffer + i) = function(*(array_a.elements + i), *(array_b.elements + i));
+  }
+  return (ArrayOfDoubles) { array_a.size, buffer };
+}
