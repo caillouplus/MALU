@@ -3,4 +3,11 @@
 
 #include "includes.h"
 
+#include "um.h"
+#include "dois.h"
+#include "tres.h"
+#include "quatro.h"
+#include "cinco.h"
+#include "seis.h"
+
 #endif
