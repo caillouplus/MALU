@@ -10,4 +10,6 @@
 #include "cinco.h"
 #include "seis.h"
 
+int _temp;
+
 #endif

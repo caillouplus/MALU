@@ -1,7 +1,7 @@
 #include "main.h"
 
 int main(int argc, char* argv[]) {
-  int _temp;
+  setlocale(LC_ALL, "");
 ApplicationStart:
   wprintf(L"Bom dia. Selecione qual questão você gostaria de ver, de 1 a 6, ou digite 0 para sair: ");
   if (scanf("%d", &_temp) == EOF) goto ApplicationStart;
